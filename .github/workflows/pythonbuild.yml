@@ -20,6 +20,6 @@ jobs:
         env:
         run: |
           ./build_venv.sh
-          source $PYTHONBASE/venv/bin/activate
+          source ./venv/bin/activate
           pip list
           python setup.py sdist bdist_wheel
