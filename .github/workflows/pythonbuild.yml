@@ -24,10 +24,10 @@ jobs:
 
       - name: pip list
         run: |
-          source activate PYTHONBASE/venv
+          source activate $PYTHONBASE/venv
           pip list
 
       - name: Build Deploy package
         run: |
-          source activate PYTHONBASE/venv
+          source activate $PYTHONBASE/venv
           python setup.py sdist bdist_wheel
