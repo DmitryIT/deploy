@@ -17,14 +17,17 @@ jobs:
           python-version: '3.x'
 
       - name: Create virtual environment
-        run: ./build_venv.sh
+        run: |
+          ./build_venv.sh
+          PYTHONBASE=$(pwd)
+          export PYTHONBASE
 
       - name: pip list
         run: |
-          source activate venv
+          source activate PYTHONBASE/venv
           pip list
 
       - name: Build Deploy package
         run: |
-          source activate venv
+          source activate PYTHONBASE/venv
           python setup.py sdist bdist_wheel
