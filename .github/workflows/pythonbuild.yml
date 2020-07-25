@@ -20,8 +20,11 @@ jobs:
         run: ./build_venv.sh
 
       - name: pip list
-        run: pip list
+        run: |
+          source activate venv
+          pip list
 
       - name: Build Deploy package
         run: |
+          source activate venv
           python setup.py sdist bdist_wheel
