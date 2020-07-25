@@ -18,8 +18,9 @@ jobs:
 
       - name: Create virtual environment
         env:
-          PYTHONBASE=$(pwd)
+          PYTHONBASE=/tmp/python
         run: |
+          cd $PYTHONBASE
           ./build_venv.sh
 
       - name: pip list
