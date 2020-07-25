@@ -14,10 +14,13 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v1
         with:
-          python_version: '3.x'
+          python-version: '3.x'
 
       - name: Create virtual environment
         run: ./build_venv.sh
+
+      - name: pip list
+        run: pip list
 
       - name: Build Deploy package
         run: |
