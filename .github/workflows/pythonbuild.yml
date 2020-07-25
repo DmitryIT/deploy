@@ -16,21 +16,10 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Create virtual environment
+      - name: Create virtual environment && Build Package
         env:
-          PYTHONBASE: /tmp/python
         run: |
-          mkdir -p $PYTHONBASE
-          cd $PYTHONBASE
           ./build_venv.sh
-
-      - name: pip list
-        run: |
-          ls -alh $PYTHONBASE/venv/bin/activate
           source $PYTHONBASE/venv/bin/activate
           pip list
-
-      - name: Build Deploy package
-        run: |
-          source $PYTHONBASE/venv/bin/activate
           python setup.py sdist bdist_wheel
