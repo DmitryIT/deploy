@@ -16,7 +16,7 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Create virtual environment && Build Package
+      - name: Create virtual environment && Build Package.
         run: |
           ./build_venv.sh
           source ./venv/bin/activate
